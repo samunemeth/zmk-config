@@ -68,15 +68,6 @@
   delay-ms = <0>;                       // 0
 };
 
-// #define U_MS_U &mmv MOVE_UP
-// #define U_MS_D &mmv MOVE_DOWN
-// #define U_MS_L &mmv MOVE_LEFT
-// #define U_MS_R &mmv MOVE_RIGHT
-// #define U_WH_U &msc SCRL_UP
-// #define U_WH_D &msc SCRL_DOWN
-// #define U_WH_L &msc SCRL_LEFT
-// #define U_WH_R &msc SCRL_RIGHT
-
 / {
 
     behaviors {
@@ -117,10 +108,10 @@
         symbol_layer { // Layer 1
             bindings = <
 
-&kp ESC   &kp AT_SIGN &kp LS(N3)   &kp DLLR         &kp PRCNT  &kp CARET &kp LS(COMMA) &kp LS(DOT) &kp SEMI &kp BACKSPACE
-&kp TAB   &kp EQUAL   &kp LA(RBKT) &kp LA(LS(RBKT)) &kp SQT    &kp BSLH  &kp LBRC      &kp RBRC    &kp PIPE &kp ENTER
-&kp TILDE &kp LA(N3)  &kp LA(LBKT) &kp LA(LS(LBKT)) &kp DQT    &kp LBKT  &kp LPAR      &kp RPAR    &kp RBKT &to 3
-                                   &to 0            &kp LSHIFT &kp RALT  &to 2
+&kp ESC   &kp AT_SIGN &kp HASH &kp DLLR     &kp PRCNT       &kp BSLH   &kp LESS_THAN &kp GREATER_THAN &kp SLASH &kp BACKSPACE
+&kp TAB   &kp EQUAL   &none    &kp QUESTION &kp EXCLAMATION &kp CARET  &kp LPAR      &kp RPAR         &kp MINUS &kp ENTER
+&kp TILDE &none       &none    &none        &none           &kp LBKT   &kp LBRC      &kp RBRC         &kp RBKT  &to 3
+                                            &to 0           &kp LSHIFT &kp RCTRL     &to 2
 
             >;
         };
@@ -128,9 +119,9 @@
         number_layer { // Layer 2
             bindings = <
 
-&kp ESC &kp C_PP &kp C_PREV   &kp C_NEXT   &kp LS(MINUS) &kp MINUS &kp N7 &kp N8 &kp N9 &kp BACKSPACE
-&kp TAB &trans   &kp C_VOL_DN &kp C_VOL_UP &kp LS(EQUAL) &kp EQUAL &kp N4 &kp N5 &kp N6 &kp ENTER
-&none   &kp AMPS &kp SLASH    &kp STAR     &kp DOT       &kp N0    &kp N1 &kp N2 &kp N3 &to 3
+&kp ESC &kp C_PP  &kp C_PREV   &kp C_NEXT   &kp LS(MINUS) &kp MINUS &kp N7 &kp N8 &kp N9 &kp BACKSPACE
+&kp TAB &kp EQUAL &kp C_VOL_DN &kp C_VOL_UP &kp LS(EQUAL) &kp EQUAL &kp N4 &kp N5 &kp N6 &kp ENTER
+&none   &kp AMPS  &kp SLASH    &kp STAR     &kp DOT       &kp N0    &kp N1 &kp N2 &kp N3 &to 3
                               &to 0        &kp LGUI      &kp RALT  &none
 
             >;
