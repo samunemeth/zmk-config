@@ -140,7 +140,7 @@
             bindings = <
 
 &kp ESC   &msc SCRL_LEFT   &mmv MOVE_UP   &msc SCRL_RIGHT &msc SCRL_UP   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2   &kp BACKSPACE
-&kp TAB   &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_RIGTH &msc SCRL_DOWN &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT      &kp ENTER
+&kp TAB   &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_DOWN &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT      &kp ENTER
 &mkp RCLK &studio_unlock   &bootloader    &soft_off       &sys_reset     &sys_reset &soft_off    &bootloader  &studio_unlock &none
                                           &to 0           &mkp LCLK      &none      &to 2
 
