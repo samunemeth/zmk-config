@@ -73,7 +73,7 @@
     behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+            label = "homerow_mods";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick_tap_ms = <0>;
@@ -82,18 +82,54 @@
         };
         td: tapdance {
             compatible = "zmk,behavior-hold-tap";
-            label = "TAPDANCE";
+            label = "tapdance";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-        sm: shift_morph {
+
+        sm_f1_f7: shift_morph_f1_f7 {
             compatible = "zmk,behavior-mod-morph";
-            label = "SHIFT_MORPH";
-            #binding-cells = <2>;
-            bindings = <&kp>, <&kp>;
+            label = "shift_morph_f1_f7";
+            #binding-cells = <0>;
+            bindings = <&kp F1>, <&kp F7>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        sm_f2_f8: shift_morph_f2_f8 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "shift_morph_f2_f8";
+            #binding-cells = <0>;
+            bindings = <&kp F2>, <&kp F8>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        sm_f3_f9: shift_morph_f3_f9 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "shift_morph_f3_f9";
+            #binding-cells = <0>;
+            bindings = <&kp F3>, <&kp F9>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        sm_f4_f10: shift_morph_f4_f10 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "shift_morph_f4_f10";
+            #binding-cells = <0>;
+            bindings = <&kp F4>, <&kp F10>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        sm_f5_f11: shift_morph_f5_f11 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "shift_morph_f5_f11";
+            #binding-cells = <0>;
+            bindings = <&kp F5>, <&kp F11>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        sm_f6_f12: shift_morph_f6_f12 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "shift_morph_f6_f12";
+            #binding-cells = <0>;
+            bindings = <&kp F6>, <&kp F12>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
@@ -115,10 +151,10 @@
         symbol_layer { // Layer 1
             bindings = <
 
-&kp ESC   &kp GRAVE &kp HASH          &kp DLLR          &kp PRCNT       &kp BSLH  &kp LESS_THAN &kp GREATER_THAN &kp SLASH &kp BACKSPACE
-&kp TAB   &kp EQUAL &hm LALT ASTERISK &hm LGUI QUESTION &kp EXCLAMATION &kp CARET &hm RGUI LPAR &hm RALT RPAR    &kp MINUS &kp ENTER
-&kp TILDE &kp PLUS  &kp AT_SIGN       &kp AMPERSAND     &kp PIPE        &kp LBKT  &kp LBRC      &kp RBRC         &kp RBKT  &to 3
-                                      &to 2             &none           &kp RCTRL &to 0
+&kp TAB    &kp GRAVE &kp HASH          &kp DLLR          &kp PRCNT       &kp BSLH  &kp LESS_THAN &kp GREATER_THAN &kp SLASH &kp BACKSPACE
+&kp ESC    &kp EQUAL &hm LALT ASTERISK &hm LGUI QUESTION &kp EXCLAMATION &kp CARET &hm RGUI LPAR &hm RALT RPAR    &kp MINUS &kp ENTER
+&kp DELETE &kp PLUS  &kp AT_SIGN       &kp AMPERSAND     &kp TILDE       &kp LBKT  &kp LBRC      &kp RBRC         &kp RBKT  &to 3
+                                       &to 2             &kp LSHIFT      &kp RCTRL &to 0
 
             >;
         };
@@ -127,8 +163,8 @@
             bindings = <
 
 &kp C_PREV &kp C_NEXT &kp C_VOL_DN &kp C_VOL_UP &kp C_PP   &none     &kp N7      &kp N8      &kp N9 &kp BACKSPACE
-&sm F1 F7  &sm F2 F8  &sm F3 F9    &sm F4 F10   &sm F5 F11 &none     &hm RGUI N4 &hm RALT N5 &kp N6 &kp ENTER
-&none      &none      &none        &none        &sm F6 F12 &kp N0    &kp N1      &kp N2      &kp N3 &to 3
+&none      &none      &kp LALT     &kp LGUI     &sm_f6_f12 &none     &hm RGUI N4 &hm RALT N5 &kp N6 &kp ENTER
+&sm_f1_f7  &sm_f2_f8  &sm_f3_f9    &sm_f4_f10   &sm_f5_f11 &kp N0    &kp N1      &kp N2      &kp N3 &to 3
                                    &to 1        &kp LSHIFT &kp RCTRL &to 0
 
             >;
@@ -137,8 +173,8 @@
         nav_layer { // Layer 3
             bindings = <
 
-&kp ESC   &msc SCRL_LEFT   &mmv MOVE_UP   &msc SCRL_RIGHT &msc SCRL_UP   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2   &kp BACKSPACE
-&kp TAB   &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_DOWN &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT      &kp ENTER
+&kp TAB   &msc SCRL_LEFT   &mmv MOVE_UP   &msc SCRL_RIGHT &msc SCRL_UP   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2   &kp BACKSPACE
+&kp ESC   &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_DOWN &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT      &kp ENTER
 &mkp RCLK &studio_unlock   &bootloader    &soft_off       &sys_reset     &sys_reset &soft_off    &bootloader  &studio_unlock &none
                                           &to 1           &mkp LCLK      &none      &to 0
 
