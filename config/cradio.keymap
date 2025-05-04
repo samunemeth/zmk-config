@@ -90,6 +90,21 @@
             bindings = <&kp>, <&kp>;
         };
 
+        sm_com_ques: sm_comma_question {
+            compatible = "zmk,behavior-mod-morph";
+            label = "sm_comma_question";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp QUESTION>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        sm_dot_excl: sm_dot_exclamation {
+            compatible = "zmk,behavior-mod-morph";
+            label = "sm_dot_exclamation";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp EXCLAMATION>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
         sm_f1_f7: shift_morph_f1_f7 {
             compatible = "zmk,behavior-mod-morph";
             label = "shift_morph_f1_f7";
@@ -151,10 +166,10 @@
         default_layer { // Layer 0
             bindings = <
 
-&kp SQT  &kp COMMA &kp DOT    &kp P      &kp Y     &kp F     &kp G      &kp C      &kp R &kp L
-&kp A    &kp O     &hm LALT E &hm LGUI U &kp I     &kp D     &hm RGUI H &hm RALT T &kp N &kp S
-&kp SEMI &kp Q     &kp J      &kp K      &kp X     &kp B     &kp M      &kp W      &kp V &kp Z
-                   &to 1      &kp LSHIFT &kp RCTRL &kp SPACE
+&kp SQT  &sm_com_ques &sm_dot_excl &kp P      &kp Y     &kp F     &kp G      &kp C      &kp R &kp L
+&kp A    &kp O        &hm LALT E   &hm LGUI U &kp I     &kp D     &hm RGUI H &hm RALT T &kp N &kp S
+&kp SEMI &kp Q        &kp J        &kp K      &kp X     &kp B     &kp M      &kp W      &kp V &kp Z
+                      &to 1        &kp LSHIFT &kp RCTRL &kp SPACE
 
             >;
         };
@@ -162,10 +177,10 @@
         symbol_layer { // Layer 1
             bindings = <
 
-&kp TAB    &kp GRAVE &kp HASH          &kp DLLR          &kp PRCNT       &kp BSLH  &kp LESS_THAN &kp GREATER_THAN &kp SLASH &kp BACKSPACE
-&kp ESC    &kp EQUAL &hm LALT ASTERISK &hm LGUI QUESTION &kp EXCLAMATION &kp CARET &hm RGUI LPAR &hm RALT RPAR    &kp MINUS &kp ENTER
-&kp DELETE &kp PLUS  &kp AT_SIGN       &kp AMPERSAND     &kp TILDE       &kp LBKT  &kp LBRC      &kp RBRC         &kp RBKT  &to 3
-                                       &to 2             &kp LSHIFT      &kp RCTRL &to 0
+&kp TAB    &kp GRAVE      &kp HASH          &kp DLLR          &kp PRCNT  &kp BSLH  &kp LESS_THAN &kp GREATER_THAN &kp SLASH &kp BACKSPACE
+&kp ESC    &kp UNDERSCORE &hm LALT ASTERISK &hm LGUI EQUAL    &kp TILDE  &kp CARET &hm RGUI LPAR &hm RALT RPAR    &kp MINUS &kp ENTER
+&kp DELETE &kp PLUS       &kp AT_SIGN       &kp AMPERSAND     &kp PIPE   &kp LBKT  &kp LBRC      &kp RBRC         &kp RBKT  &to 3
+                                            &to 2             &kp LSHIFT &kp RCTRL &to 0
 
             >;
         };
