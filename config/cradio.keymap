@@ -240,10 +240,10 @@
         number_layer { // Layer 2
             bindings = <
 
-&sm_bt_0  &sm_bt_1  &sm_bt_2   &out OUT_TOG  &sm_next_prev     &kp CARET    &kp N7 &kp N8 &kp N9 &kp EQUAL
-&sm_f1_f7 &none     &none      &kp C_PP      &sm_volup_voldown &kp ASTERISK &kp N4 &kp N5 &kp N6 &kp PLUS
-&sm_f2_f8 &sm_f3_f9 &sm_f4_f10 &sm_f5_f11    &sm_f6_f12        &kp N0       &kp N1 &kp N2 &kp N3 &kp TILDE
-                               &mo 3         &kp LSHIFT        &bootloader  &trans
+&sm_bt_0  &sm_bt_1  &sm_bt_2           &out OUT_TOG &sm_next_prev     &kp CARET    &kp N7 &kp N8 &kp N9 &kp EQUAL
+&sm_f1_f7 &kp C_PP  &kp LC(LA(LS(F8))) &kp LGUI     &sm_volup_voldown &kp ASTERISK &kp N4 &kp N5 &kp N6 &kp PLUS
+&sm_f2_f8 &sm_f3_f9 &sm_f4_f10         &sm_f5_f11   &sm_f6_f12        &kp N0       &kp N1 &kp N2 &kp N3 &kp TILDE
+                                       &mo 3        &kp LSHIFT        &bootloader  &trans
 
             >;
         };
