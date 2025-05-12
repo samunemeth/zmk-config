@@ -149,7 +149,7 @@
 &kp TAB    &kp GRAVE   &kp HASH      &kp DLLR       &kp PRCNT   &kp LESS_THAN &kp LPAR &kp RPAR &kp GREATER_THAN &kp ENTER
 &kp ESC    &kp BSLH    &sk LALT      &sk LGUI       &kp SLASH   &kp LEFT      &kp DOWN &kp UP   &kp RIGHT        &kp BACKSPACE
 &kp DELETE &kp AT_SIGN &kp AMPERSAND &kp UNDERSCORE &kp PIPE    &kp LBKT      &kp LBRC &kp RBRC &kp RBKT         &kp MINUS
-                                     &trans         &bootloader &none         &mo 2
+                                     &trans         &bootloader &kp F22       &mo 2
 
             >;
         };
