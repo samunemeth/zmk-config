@@ -174,27 +174,27 @@
             compatible = "zmk,behavior-mod-morph";
             label = "shift_morph_volup_voldown";
             #binding-cells = <0>;
-            bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
+            bindings = <&kp C_VOLUME_UP>, <&kp C_VOLUME_DOWN>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         sm_bt_0: shift_morph_bt_0 {
             compatible = "zmk,behavior-mod-morph";
-            label = "shift_morph_volup_voldown";
+            label = "shift_morph_bt_0";
             #binding-cells = <0>;
             bindings = <&bt BT_SEL 0>, <&bt_clear_0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         sm_bt_1: shift_morph_bt_1 {
             compatible = "zmk,behavior-mod-morph";
-            label = "shift_morph_volup_voldown";
+            label = "shift_morph_bt_1";
             #binding-cells = <0>;
             bindings = <&bt BT_SEL 1>, <&bt_clear_1>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         sm_bt_2: shift_morph_bt_2 {
             compatible = "zmk,behavior-mod-morph";
-            label = "shift_morph_volup_voldown";
+            label = "shift_morph_bt_2";
             #binding-cells = <0>;
             bindings = <&bt BT_SEL 2>, <&bt_clear_2>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
