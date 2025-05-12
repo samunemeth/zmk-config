@@ -13,6 +13,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/outputs.h>
 
 /*
 
@@ -68,26 +69,41 @@
   delay-ms = <0>;                       // 0
 };
 
+// Sticky key tuning
+&sk {
+    release-after-ms = <3000>;
+};
+
 / {
 
+    macros {
+        bt_clear_0: bt_clear_0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &bt BT_SEL 0>
+                , <&macro_tap &bt BT_CLR>
+                ;
+        };
+        bt_clear_1: bt_clear_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &bt BT_SEL 1>
+                , <&macro_tap &bt BT_CLR>
+                ;
+        };
+        bt_clear_2: bt_clear_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &bt BT_SEL 2>
+                , <&macro_tap &bt BT_CLR>
+                ;
+        };
+    };
+
     behaviors {
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "homerow_mods";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-        ls: layer_tap_hold {
-            compatible = "zmk,behavior-hold-tap";
-            label = "layer_tap_hold";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&mo>, <&to>;
-        };
 
         sm_com_ques: sm_comma_question {
             compatible = "zmk,behavior-mod-morph";
@@ -146,6 +162,43 @@
             bindings = <&kp F6>, <&kp F12>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        sm_next_prev: shift_morph_next_prev {
+            compatible = "zmk,behavior-mod-morph";
+            label = "shift_morph_next_prev";
+            #binding-cells = <0>;
+            bindings = <&kp C_NEXT>, <&kp C_PREV>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        sm_volup_voldown: shift_morph_volup_voldown {
+            compatible = "zmk,behavior-mod-morph";
+            label = "shift_morph_volup_voldown";
+            #binding-cells = <0>;
+            bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        sm_bt_0: shift_morph_bt_0 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "shift_morph_volup_voldown";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 0>, <&bt_clear_0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        sm_bt_1: shift_morph_bt_1 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "shift_morph_volup_voldown";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 1>, <&bt_clear_1>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        sm_bt_2: shift_morph_bt_2 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "shift_morph_volup_voldown";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 2>, <&bt_clear_2>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     combos {
@@ -168,7 +221,7 @@
 &kp SQT  &sm_com_ques &sm_dot_excl &kp P      &kp Y     &kp F     &kp G &kp C &kp R &kp L
 &kp A    &kp O        &kp E        &kp U      &kp I     &kp D     &kp H &kp T &kp N &kp S
 &kp SEMI &kp Q        &kp J        &kp K      &kp X     &kp B     &kp M &kp W &kp V &kp Z
-                      &ls 1 1      &kp LSHIFT &kp RCTRL &kp SPACE
+                      &mo 1        &kp LSHIFT &kp RCTRL &kp SPACE
 
             >;
         };
@@ -176,10 +229,10 @@
         symbol_layer { // Layer 1
             bindings = <
 
-&kp TAB    &kp GRAVE      &kp HASH     &kp DLLR      &kp PRCNT  &kp BSLH  &kp LESS_THAN &kp GREATER_THAN &kp SLASH &kp ENTER
-&kp ESC    &kp UNDERSCORE &kp ASTERISK &kp EQUAL     &kp TILDE  &kp CARET &kp LPAR      &kp RPAR         &kp MINUS &kp BACKSPACE
-&kp DELETE &kp PLUS       &kp AT_SIGN  &kp AMPERSAND &kp PIPE   &kp LBKT  &kp LBRC      &kp RBRC         &kp RBKT  &ls 3 3
-                                       &ls 2 2       &kp LSHIFT &kp RCTRL &to 0
+&kp TAB    &kp GRAVE   &kp HASH      &kp DLLR       &kp PRCNT   &kp LESS_THAN &kp LPAR &kp RPAR &kp GREATER_THAN &kp ENTER
+&kp ESC    &kp BSLH    &sk LALT      &sk LGUI       &kp SLASH   &kp LEFT      &kp DOWN &kp UP   &kp RIGHT        &kp BACKSPACE
+&kp DELETE &kp AT_SIGN &kp AMPERSAND &kp UNDERSCORE &kp PIPE    &kp LBKT      &kp LBRC &kp RBRC &kp RBKT         &kp MINUS
+                                     &trans         &bootloader &sk RCTRL     &mo 2
 
             >;
         };
@@ -187,10 +240,10 @@
         number_layer { // Layer 2
             bindings = <
 
-&kp C_PREV &kp C_NEXT &kp C_VOL_DN &kp C_VOL_UP &kp C_PP   &none     &kp N7 &kp N8 &kp N9 &kp ENTER
-&none      &none      &none        &none        &sm_f6_f12 &none     &kp N4 &kp N5 &kp N6 &kp BACKSPACE
-&sm_f1_f7  &sm_f2_f8  &sm_f3_f9    &sm_f4_f10   &sm_f5_f11 &kp N0    &kp N1 &kp N2 &kp N3 &ls 3 3
-                                   &ls 1 1      &kp LSHIFT &kp RCTRL &to 0
+&sm_bt_0  &sm_bt_1  &sm_bt_2   &out OUT_TOG  &sm_next_prev     &kp CARET    &kp N7 &kp N8 &kp N9 &kp EQUAL
+&sm_f1_f7 &none     &none      &kp C_PP      &sm_volup_voldown &kp ASTERISK &kp N4 &kp N5 &kp N6 &kp PLUS
+&sm_f2_f8 &sm_f3_f9 &sm_f4_f10 &sm_f5_f11    &sm_f6_f12        &kp N0       &kp N1 &kp N2 &kp N3 &kp TILDE
+                               &mo 3         &kp LSHIFT        &bootloader  &trans
 
             >;
         };
@@ -198,12 +251,12 @@
         nav_layer { // Layer 3
             bindings = <
 
-&kp TAB   &msc SCRL_LEFT   &mmv MOVE_UP   &msc SCRL_RIGHT &msc SCRL_UP   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &kp ENTER
-&kp ESC   &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_DOWN &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT    &kp BACKSPACE
-&mkp RCLK &studio_unlock   &bootloader    &none           &sys_reset     &sys_reset &none        &bootloader  &none         &none
-                                          &ls 1 1         &mkp LCLK      &none      &to 0
+&none &none &none &none  &none          &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none
+&none &none &none &none  &none          &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &mkp RCLK
+&none &none &none &none  &none          &none          &none          &none        &none           &none
+                  &trans &studio_unlock &mkp LCLK      &none
 
             >;
-        };
+        };  
     };
 };
