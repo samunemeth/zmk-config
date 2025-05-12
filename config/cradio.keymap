@@ -80,34 +80,24 @@
         bt_clear_0: bt_clear_0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_tap &bt BT_SEL 0>
-                , <&macro_tap &bt BT_CLR>
-                ;
+            bindings = <&macro_tap &bt BT_SEL 0 &macro_tap &bt BT_CLR>;
         };
         bt_clear_1: bt_clear_1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_tap &bt BT_SEL 1>
-                , <&macro_tap &bt BT_CLR>
-                ;
+            bindings = <&macro_tap &bt BT_SEL 1 &macro_tap &bt BT_CLR>;
         };
         bt_clear_2: bt_clear_2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_tap &bt BT_SEL 2>
-                , <&macro_tap &bt BT_CLR>
-                ;
+            bindings = <&macro_tap &bt BT_SEL 2 &macro_tap &bt BT_CLR>;
         };
-        c_sleep: c_sleep {
+        uni_sleep: universal_sleep {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp C_SLEEP>
-                , <&macro_tap &kp C_SLEEP_MODE>
-                ;
+            wait-ms = <50>;
+            tap-ms = <5>;
+            bindings = <&kp C_SLEEP &kp C_SLEEP_MODE &kp LG(X) &kp U &kp S>;
         };
     };
 
@@ -170,7 +160,7 @@
 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2       &out OUT_TOG &kp C_VOL_UP &kp CARET    &kp N7 &kp N8 &kp N9 &kp EQUAL
 &kp F1       &kp C_PP     &kp LC(LA(LS(F8))) &kp LGUI     &kp C_VOL_DN &kp ASTERISK &kp N4 &kp N5 &kp N6 &kp PLUS
 &kp F2       &kp F3       &kp F4             &kp F5       &kp F6       &kp N0       &kp N1 &kp N2 &kp N3 &kp TILDE
-                                             &mo 3        &c_sleep     &bootloader  &trans
+                                             &mo 3        &uni_sleep   &bootloader  &trans
 
             >;
         };
