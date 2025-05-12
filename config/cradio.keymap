@@ -174,9 +174,9 @@
         default_layer { // Layer 0
             bindings = <
 
-&kp SQT  &sm_com_ques &sm_dot_excl &kp P      &kp Y     &kp F     &kp G      &kp C      &kp R &kp L
-&kp A    &kp O        &hm LALT E   &hm LGUI U &kp I     &kp D     &hm RGUI H &hm RALT T &kp N &kp S
-&kp SEMI &kp Q        &kp J        &kp K      &kp X     &kp B     &kp M      &kp W      &kp V &kp Z
+&kp SQT  &sm_com_ques &sm_dot_excl &kp P      &kp Y     &kp F     &kp G &kp C &kp R &kp L
+&kp A    &kp O        &kp E        &kp U      &kp I     &kp D     &kp H &kp T &kp N &kp S
+&kp SEMI &kp Q        &kp J        &kp K      &kp X     &kp B     &kp M &kp W &kp V &kp Z
                       &ls 1 1      &kp LSHIFT &kp RCTRL &kp SPACE
 
             >;
@@ -185,10 +185,10 @@
         symbol_layer { // Layer 1
             bindings = <
 
-&kp TAB    &kp GRAVE      &kp HASH          &kp DLLR          &kp PRCNT  &kp BSLH  &kp LESS_THAN &kp GREATER_THAN &kp SLASH &kp ENTER
-&kp ESC    &kp UNDERSCORE &hm LALT ASTERISK &hm LGUI EQUAL    &kp TILDE  &kp CARET &hm RGUI LPAR &hm RALT RPAR    &kp MINUS &kp BACKSPACE
-&kp DELETE &kp PLUS       &kp AT_SIGN       &kp AMPERSAND     &kp PIPE   &kp LBKT  &kp LBRC      &kp RBRC         &kp RBKT  &to 3
-                                            &to 2             &kp LSHIFT &kp RCTRL &to 0
+&kp TAB    &kp GRAVE      &kp HASH     &kp DLLR      &kp PRCNT  &kp BSLH  &kp LESS_THAN &kp GREATER_THAN &kp SLASH &kp ENTER
+&kp ESC    &kp UNDERSCORE &kp ASTERISK &kp EQUAL     &kp TILDE  &kp CARET &kp LPAR      &kp RPAR         &kp MINUS &kp BACKSPACE
+&kp DELETE &kp PLUS       &kp AT_SIGN  &kp AMPERSAND &kp PIPE   &kp LBKT  &kp LBRC      &kp RBRC         &kp RBKT  &ls 3 3
+                                       &ls 2 2       &kp LSHIFT &kp RCTRL &to 0
 
             >;
         };
@@ -196,9 +196,9 @@
         number_layer { // Layer 2
             bindings = <
 
-&kp C_PREV &kp C_NEXT &kp C_VOL_DN &kp C_VOL_UP &kp C_PP   &none     &kp N7      &kp N8      &kp N9 &kp ENTER
-&none      &none      &kp LALT     &kp LGUI     &sm_f6_f12 &none     &hm RGUI N4 &hm RALT N5 &kp N6 &kp BACKSPACE
-&sm_f1_f7  &sm_f2_f8  &sm_f3_f9    &sm_f4_f10   &sm_f5_f11 &kp N0    &kp N1      &kp N2      &kp N3 &to 3
+&kp C_PREV &kp C_NEXT &kp C_VOL_DN &kp C_VOL_UP &kp C_PP   &none     &kp N7 &kp N8 &kp N9 &kp ENTER
+&none      &none      &none        &none        &sm_f6_f12 &none     &kp N4 &kp N5 &kp N6 &kp BACKSPACE
+&sm_f1_f7  &sm_f2_f8  &sm_f3_f9    &sm_f4_f10   &sm_f5_f11 &kp N0    &kp N1 &kp N2 &kp N3 &ls 3 3
                                    &ls 1 1      &kp LSHIFT &kp RCTRL &to 0
 
             >;
@@ -207,9 +207,9 @@
         nav_layer { // Layer 3
             bindings = <
 
-&kp TAB   &msc SCRL_LEFT   &mmv MOVE_UP   &msc SCRL_RIGHT &msc SCRL_UP   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2   &kp ENTER
-&kp ESC   &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_DOWN &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT      &kp BACKSPACE
-&mkp RCLK &studio_unlock   &bootloader    &soft_off       &sys_reset     &sys_reset &soft_off    &bootloader  &studio_unlock &none
+&kp TAB   &msc SCRL_LEFT   &mmv MOVE_UP   &msc SCRL_RIGHT &msc SCRL_UP   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &kp ENTER
+&kp ESC   &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_RIGHT &msc SCRL_DOWN &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT    &kp BACKSPACE
+&mkp RCLK &studio_unlock   &bootloader    &none           &sys_reset     &sys_reset &none        &bootloader  &none         &none
                                           &ls 1 1         &mkp LCLK      &none      &to 0
 
             >;
