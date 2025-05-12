@@ -169,7 +169,7 @@
 
 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2       &out OUT_TOG &kp C_VOL_UP &kp CARET    &kp N7 &kp N8 &kp N9 &kp EQUAL
 &kp F1       &kp C_PP     &kp LC(LA(LS(F8))) &kp LGUI     &kp C_VOL_DN &kp ASTERISK &kp N4 &kp N5 &kp N6 &kp PLUS
-&kp F2       &kp F3       &kp F4             &kp R5       &kp F6       &kp N0       &kp N1 &kp N2 &kp N3 &kp TILDE
+&kp F2       &kp F3       &kp F4             &kp F5       &kp F6       &kp N0       &kp N1 &kp N2 &kp N3 &kp TILDE
                                              &mo 3        &c_sleep     &bootloader  &trans
 
             >;
