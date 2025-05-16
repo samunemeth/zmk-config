@@ -50,7 +50,7 @@ layers:
     - ">"
     - "$$mdi:keyboard-return$$"
     - "ESC"
-    - "\""
+    - "\\"
     - { t: ALT, h: sticky }
     - { t: WIN, h: sticky }
     - "/"
