@@ -1,0 +1,153 @@
+layout: { zmk_keyboard: "cradio" }
+draw_config:
+  glyph_tap_size: 20
+  footer_text: "By: @samunemeth"
+layers:
+  default:
+    - { t: "'", s: '"' }
+    - { t: ",", s: "?" }
+    - { t: ".", s: "!" }
+    - "P"
+    - "Y"
+    - "F"
+    - "G"
+    - "C"
+    - "R"
+    - "L"
+    - "A"
+    - "O"
+    - "E"
+    - "U"
+    - "I"
+    - "D"
+    - "H"
+    - "T"
+    - "N"
+    - "S"
+    - { t: ";", s: ":" }
+    - "Q"
+    - "J"
+    - "K"
+    - "X"
+    - "B"
+    - "M"
+    - "W"
+    - "V"
+    - "Z"
+    - "symbol"
+    - { t: SHIFT, h: sticky }
+    - { t: CTRL, h: sticky }
+    - "SPACE"
+  symbol:
+    - "$$mdi:keyboard-tab$$"
+    - "`"
+    - "#"
+    - "$"
+    - "%"
+    - "<"
+    - "("
+    - ")"
+    - ">"
+    - "$$mdi:keyboard-return$$"
+    - "ESC"
+    - "\""
+    - { t: ALT, h: sticky }
+    - { t: WIN, h: sticky }
+    - "/"
+    - "$$mdi:arrow-left-bold$$"
+    - "$$mdi:arrow-down-bold$$"
+    - "$$mdi:arrow-up-bold$$"
+    - "$$mdi:arrow-right-bold$$"
+    - "$$mdi:backspace$$"
+    - "$$mdi:backspace-reverse$$"
+    - "@"
+    - "&"
+    - "_"
+    - "|"
+    - "["
+    - "{"
+    - "}"
+    - "]"
+    - "-"
+    - { type: held }
+    - { t: "boot", type: "ghost" }
+    - "clear mods"
+    - "number"
+  number:
+    - "$$mdi:keyboard-tab-reverse$$"
+    - { t: "$$mdi:bluetooth$$", h: "0" }
+    - { t: "$$mdi:bluetooth$$", h: "1" }
+    - { t: "$$mdi:bluetooth$$", h: "2" }
+    - "$$mdi:volume-plus$$"
+    - "^"
+    - "7"
+    - "8"
+    - "9"
+    - "="
+    - "F1"
+    - "$$mdi:play-pause$$"
+    - "$$mdi:layers-triple$$"
+    - "WIN"
+    - "$$mdi:volume-minus$$"
+    - "0"
+    - "4"
+    - "5"
+    - "6"
+    - "+"
+    - "F2"
+    - "F3"
+    - "F4"
+    - "F5"
+    - "F6"
+    - "*"
+    - "1"
+    - "2"
+    - "3"
+    - "~"
+    - "nav"
+    - "host sleep"
+    - { t: "boot", type: "ghost" }
+    - { type: held }
+  nav:
+    - "output toggle"
+    - { t: "$$mdi:bluetooth-off$$", h: "0" }
+    - { t: "$$mdi:bluetooth-off$$", h: "1" }
+    - { t: "$$mdi:bluetooth-off$$", h: "2" }
+    - "$$mdi:skip-previous$$"
+    - { t: "$$mdi:arrow-up-thin$$", h: "scroll" }
+    - { t: "$$mdi:arrow-left-thin$$", h: "scroll" }
+    - { t: "$$mdi:arrow-up-bold$$", h: "mouse" }
+    - { t: "$$mdi:arrow-right-thin$$", h: "scroll" }
+    - ""
+    - "F7"
+    - "$$mdi:volume-mute$$"
+    - "ctr alt del"
+    - "$$mdi:text-search-variant$$"
+    - "$$mdi:skip-next$$"
+    - { t: "$$mdi:arrow-down-thin$$", h: "scroll" }
+    - { t: "$$mdi:arrow-left-bold$$", h: "mouse" }
+    - { t: "$$mdi:arrow-down-bold$$", h: "mouse" }
+    - { t: "$$mdi:arrow-right-bold$$", h: "mouse" }
+    - "RCLK"
+    - "F8"
+    - "F9"
+    - "F10"
+    - "F11"
+    - "F12"
+    - ""
+    - ""
+    - ""
+    - ""
+    - ""
+    - { type: "held" }
+    - { t: "studio unlock", type: "ghost" }
+    - "LCLK"
+    - ""
+combos:
+  - p: [31, 32]
+    k: "caps word"
+    l: ["default"]
+    a: "top"
+    o: 0.3
+    w: 40
+    h: 32
