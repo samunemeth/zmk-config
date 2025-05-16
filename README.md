@@ -5,11 +5,11 @@
 ## Premise
 
 A [Ferris Sweep](https://github.com/davidphilipbarr/Sweep) inspired
-34 key bluetooth split keyboard.
+34-key Bluetooth split keyboard.
 
 ## Layout
 
-The layout is based on a [dvorak layout](https://en.wikipedia.org/wiki/Dvorak_keyboard_layout), but the symbols and numbers are custom placed.
+The layout is based on a [Dvorak layout](https://en.wikipedia.org/wiki/Dvorak_keyboard_layout), but the symbols and numbers are custom-placed.
 There are no home row modifiers, and a minimum amount of combos, as they
 bother me.
 
