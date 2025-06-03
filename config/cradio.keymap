@@ -108,16 +108,6 @@
                 <&macro_tap &sk LALT>,
                 <&macro_release &kp LALT>;
         };
-        llo: macro_layer_hold_on_release {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            wait-ms = <40>;
-            tap-ms = <40>;
-            bindings =
-                <&macro_pause_for_release>,
-                <&macro_param_1to1>,
-                <&macro_tap &to MACRO_PLACEHOLDER>;
-        };
     };
 
     behaviors {
@@ -189,8 +179,8 @@
 
 &out OUT_TOG &bt_clear_0 &bt_clear_1     &bt_clear_2        &kp C_PREV  &msc SCRL_UP   &msc SCRL_LEFT &mmv MOVE_UP   &msc SCRL_RIGHT &kp PRINTSCREEN
 &kp F7       &kp C_MUTE  &kp LC(LA(DEL)) &kp LC(LA(LS(F8))) &kp C_NEXT  &msc SCRL_DOWN &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &mkp RCLK
-&kp F8       &kp F9      &kp F10         &kp F11            &kp F12     &none          &none          &none          &none           &to 0
-                                         &trans             &bootloader &mkp LCLK      &llo 3
+&kp F8       &kp F9      &kp F10         &kp F11            &kp F12     &none          &none          &none          &none           &none
+                                         &trans             &bootloader &mkp LCLK      &none
 
             >;
         }; 
