@@ -151,10 +151,10 @@
         default_layer { // Layer 0
             bindings = <
 
-&kp Q  &kp W &kp E &kp R      &kp T     &kp Y     &kp U &kp I &kp O &kp P
-&kp A    &kp S        &kp D        &kp F      &kp G     &kp H     &kp J &kp K &kp L &kp SEMI
-&kp Z &kp X        &kp C        &kp V      &kp B     &kp N     &kp M &sm_com_ques &sm_dot_excl &sm_slh_bslh
-                      &mo 1        &sk LSHIFT &sk RCTRL &kp SPACE
+&kp Q &kp W &kp E &kp R &kp T      &kp Y     &kp U &kp I &kp O &kp P
+&kp A &kp S &kp D &kp F &kp G      &kp H     &kp J &kp K &kp L &kp SEMI
+&kp Z &kp X &kp C &kp V &kp B      &kp N     &kp M &kp COMMA &sm_dot_excl &sm_slh_bslh
+                  &mo 1 &sk LSHIFT &sk RCTRL &kp SPACE
 
             >;
         };
